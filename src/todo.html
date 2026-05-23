@@ -1,0 +1,1865 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vert Grenier — Brocante Vintage</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --green: #2d5a3d;
+        --green-mid: #3a6e4e;
+        --green-light: #4e8c64;
+        --cream: #f5efe3;
+        --cream-dark: #ebe2ce;
+        --amber: #c4881a;
+        --amber-warm: #d4a43a;
+        --rust: #8b4a2a;
+        --rust-mid: #a35a35;
+        --mustard: #c49a22;
+        --mustard-bg: #c89f28;
+        --terracotta: #9b5a3c;
+        --white: #ffffff;
+        --text-dark: #2a2018;
+        --text-mid: #5a4a35;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Jost', sans-serif;
+        background: var(--cream);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* ─── NAV ─────────────────────────────────────────────── */
+      nav {
+        background: var(--green);
+        padding: 0 3rem;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-left,
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2.2rem;
+      }
+
+      .nav-right {
+        justify-content: flex-end;
+      }
+
+      nav a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 1.4rem 0;
+        display: block;
+        border-bottom: 2px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+
+      nav a:hover {
+        color: var(--amber-warm);
+        border-bottom-color: var(--amber-warm);
+      }
+
+      .nav-logo-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .nav-logo-circle {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.3rem;
+        flex-shrink: 0;
+      }
+
+      .nav-logo-circle svg {
+        width: 34px;
+        height: 34px;
+      }
+
+      .nav-logo-text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 0.75rem;
+        color: white;
+        letter-spacing: 0.08em;
+        text-align: center;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .nav-logo-sub {
+        font-family: 'Jost', sans-serif;
+        font-size: 0.55rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--amber-warm);
+        font-weight: 300;
+        text-align: center;
+        margin-top: 0.15rem;
+      }
+
+      /* ─── HERO ────────────────────────────────────────────── */
+      .hero {
+        background: var(--white);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 72vh;
+        overflow: hidden;
+      }
+
+      .hero-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3px;
+        background: var(--cream-dark);
+      }
+
+      .photo-cell {
+        background: var(--cream-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Illustrations SVG vintage pour remplacer les vraies photos */
+      .photo-cell svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .photo-cell.large {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      .photo-bg-1 {
+        background: #d4c4a8;
+      }
+      .photo-bg-2 {
+        background: #b8a88a;
+      }
+      .photo-bg-3 {
+        background: #c8b090;
+      }
+
+      .photo-illustration {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(60, 40, 20, 0.4);
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4rem 4.5rem 4rem 3.5rem;
+        position: relative;
+      }
+
+      /* Cercle décoratif en fond — comme dans la référence */
+      .hero-content::before {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        right: -120px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: var(--cream);
+        z-index: 0;
+      }
+
+      .hero-content > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-title {
+        line-height: 1.1;
+        margin-bottom: 2rem;
+      }
+
+      .hero-title .line-caps {
+        display: block;
+        font-family: 'Jost', sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: var(--amber);
+        margin-bottom: 0.3rem;
+      }
+
+      .hero-title .line-big {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1;
+      }
+
+      .hero-title .line-italic {
+        display: block;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+        font-weight: 300;
+        color: var(--green);
+        line-height: 1.1;
+      }
+
+      .hero-desc {
+        font-size: 0.88rem;
+        line-height: 1.85;
+        color: var(--text-mid);
+        font-weight: 300;
+        max-width: 330px;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn-outline {
+        display: inline-block;
+        border: 1.5px solid var(--green);
+        color: var(--green);
+        padding: 0.75rem 2rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        transition:
+          background 0.25s,
+          color 0.25s;
+      }
+
+      .btn-outline:hover {
+        background: var(--green);
+        color: white;
+      }
+
+      .btn-solid {
+        display: inline-block;
+        background: var(--green);
+        color: white;
+        padding: 0.75rem 2rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.25s;
+        border: 1.5px solid var(--green);
+      }
+
+      .btn-solid:hover {
+        background: var(--green-mid);
+      }
+
+      .btn-amber-outline {
+        display: inline-block;
+        border: 1.5px solid rgba(255, 255, 255, 0.7);
+        color: white;
+        padding: 0.75rem 2rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.25s;
+      }
+
+      .btn-amber-outline:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      /* ─── TAGLINE BLOCK ───────────────────────────────────── */
+      .tagline-block {
+        background: var(--cream);
+        padding: 6rem 5rem;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Grand demi-cercle décoratif à gauche — comme dans la référence */
+      .tagline-deco {
+        position: absolute;
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: var(--green-mid);
+        flex-shrink: 0;
+      }
+
+      .tagline-content {
+        margin-left: 180px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .tagline-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 300;
+        color: var(--text-dark);
+        letter-spacing: 0.08em;
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
+      }
+
+      .tagline-title em {
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .tagline-text {
+        font-size: 0.88rem;
+        line-height: 1.9;
+        color: var(--text-mid);
+        font-weight: 300;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+      }
+
+      /* ─── ABOUT ───────────────────────────────────────────── */
+      .about {
+        background: var(--terracotta);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 60vh;
+        overflow: hidden;
+      }
+
+      .about-visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem;
+      }
+
+      /* Arch shape (arcade) comme dans la référence */
+      .about-arch-container {
+        position: relative;
+        width: 260px;
+      }
+
+      .about-arch {
+        width: 260px;
+        height: 340px;
+        background: var(--cream);
+        border-radius: 130px 130px 0 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .about-arch-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+      }
+
+      .about-arch-icon svg {
+        width: 34px;
+        height: 34px;
+        stroke: white;
+        fill: none;
+        stroke-width: 1.2;
+      }
+
+      .about-arch-label {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+
+      .about-arch-sub {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        text-align: center;
+        font-weight: 400;
+      }
+
+      /* White half-circle shape overlapping bottom of arch */
+      .about-arch-bottom {
+        width: 200px;
+        height: 100px;
+        border-radius: 0 0 100px 100px;
+        background: rgba(255, 255, 255, 0.25);
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .about-badge {
+        position: absolute;
+        top: 3rem;
+        right: 2rem;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: var(--amber);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0.8rem;
+      }
+
+      .about-badge .b-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+      }
+
+      .about-badge .b-text {
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.4;
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 4.5rem 5rem 3rem;
+      }
+
+      .section-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .about .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 700;
+        color: white;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+      }
+
+      .about .section-title em {
+        font-style: italic;
+        color: var(--amber-warm);
+      }
+
+      .about-text {
+        font-size: 0.88rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+
+      /* ─── SERVICES ────────────────────────────────────────── */
+      .services {
+        background: var(--mustard-bg);
+        padding: 5rem 4rem;
+      }
+
+      .services-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .services-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+      }
+
+      .services-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        color: white;
+        letter-spacing: 0.1em;
+      }
+
+      .services-title em {
+        font-style: italic;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        background: var(--cream-dark);
+        cursor: pointer;
+      }
+
+      /* Illustrations vintages pour les cartes */
+      .card-visual {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+        transition: background 0.3s;
+      }
+
+      .service-card:hover .card-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.15) 100%);
+      }
+
+      .card-label {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        background: var(--amber);
+        color: white;
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0.4rem 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .card-label svg {
+        width: 12px;
+        height: 12px;
+        stroke: white;
+        fill: none;
+        stroke-width: 2;
+        flex-shrink: 0;
+      }
+
+      .card-desc {
+        position: absolute;
+        bottom: 3.5rem;
+        left: 1.2rem;
+        right: 1.2rem;
+        color: white;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        font-weight: 300;
+      }
+
+      .service-card:hover .card-desc {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Card illustrations */
+      .illus-chair {
+        background: #c4b090;
+      }
+      .illus-lamp {
+        background: #a89878;
+      }
+      .illus-ceramics {
+        background: #b8a070;
+      }
+      .illus-visit {
+        background: #d0b888;
+      }
+
+      /* ─── TESTIMONIALS ────────────────────────────────────── */
+      .testimonials {
+        background: var(--cream-dark);
+        padding: 6rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Grand cercle décoratif haut droite */
+      .testimonials::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: rgba(196, 136, 26, 0.12);
+      }
+
+      /* Demi-cercle bas gauche */
+      .testimonials::after {
+        content: '';
+        position: absolute;
+        bottom: -120px;
+        left: -80px;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: rgba(45, 90, 61, 0.1);
+      }
+
+      .testimonials-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .t-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+      }
+
+      .t-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 300;
+        color: var(--text-dark);
+        letter-spacing: 0.08em;
+      }
+
+      .t-title em {
+        font-style: italic;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .t-card {
+        background: white;
+        padding: 2.5rem 2rem;
+        position: relative;
+      }
+
+      .t-quote-mark {
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        font-weight: 900;
+        color: var(--amber);
+        line-height: 0.8;
+        margin-bottom: 1rem;
+        opacity: 0.3;
+      }
+
+      .t-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+
+      .t-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 0.8rem;
+      }
+
+      .t-star {
+        width: 10px;
+        height: 10px;
+        background: var(--amber);
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+      }
+
+      .t-author {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        font-weight: 500;
+      }
+
+      /* ─── ESTIMATION ──────────────────────────────────────── */
+      .estimation {
+        background: var(--green);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 55vh;
+        overflow: hidden;
+      }
+
+      .estimation-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 4rem 5rem 5rem;
+      }
+
+      .estimation-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--amber-warm);
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .estimation-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 700;
+        color: white;
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
+      }
+
+      .estimation-title em {
+        font-style: italic;
+        color: var(--amber-warm);
+      }
+
+      .estimation-text {
+        font-size: 0.88rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+      }
+
+      .estimation-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .estep {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.3rem;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .estep:last-child {
+        border-bottom: none;
+      }
+
+      .estep-num {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--amber-warm);
+        flex-shrink: 0;
+      }
+
+      .estep-body {
+      }
+      .estep-title {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 0.2rem;
+      }
+      .estep-desc {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .estimation-visual {
+        background: var(--green-mid);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Cercle déco estimation */
+      .estimation-visual::before {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        right: -80px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .estimation-visual::after {
+        content: '';
+        position: absolute;
+        top: -60px;
+        left: -60px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .big-circle-stat {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid var(--amber-warm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .big-circle-stat .num {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+      }
+
+      .big-circle-stat .label {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--amber-warm);
+        margin-top: 0.4rem;
+        line-height: 1.5;
+      }
+
+      .mini-stats {
+        display: flex;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .mini-stat {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 0.8rem;
+      }
+
+      .mini-stat .mn {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: white;
+      }
+      .mini-stat .ml {
+        font-size: 0.58rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* ─── CONTACT ─────────────────────────────────────────── */
+      .contact {
+        background: var(--cream);
+        padding: 6rem 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact::before {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        right: -80px;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: rgba(196, 136, 26, 0.08);
+      }
+
+      .contact-inner {
+        max-width: 580px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        color: var(--text-dark);
+        letter-spacing: 0.06em;
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
+      }
+
+      .contact-title em {
+        font-style: italic;
+      }
+
+      .contact-sub {
+        font-size: 0.88rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+        font-weight: 300;
+        margin-bottom: 3rem;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      label {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        font-weight: 500;
+      }
+
+      input,
+      textarea,
+      select {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 0.85rem 1rem;
+        font-size: 0.88rem;
+        font-family: 'Jost', sans-serif;
+        color: var(--text-dark);
+        outline: none;
+        width: 100%;
+        transition: border-color 0.2s;
+        font-weight: 300;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--green);
+      }
+      textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+
+      .form-submit {
+        background: var(--green);
+        color: white;
+        border: none;
+        padding: 0.9rem 2.5rem;
+        font-family: 'Jost', sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.2s;
+        align-self: center;
+        margin-top: 0.5rem;
+      }
+
+      .form-submit:hover {
+        background: var(--green-mid);
+      }
+
+      /* ─── FOOTER ──────────────────────────────────────────── */
+      footer {
+        background: var(--green);
+        padding: 0;
+      }
+
+      .footer-tagline {
+        background: var(--green-mid);
+        padding: 3.5rem 5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-tagline-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+        font-style: italic;
+        font-weight: 300;
+        color: white;
+        letter-spacing: 0.06em;
+      }
+
+      .footer-tagline-text em {
+        font-style: normal;
+        font-weight: 700;
+        font-family: 'Playfair Display', serif;
+        color: var(--amber-warm);
+      }
+
+      /* Demi-cercle décoratif footer — comme dans la référence */
+      .footer-deco {
+        width: 100%;
+        height: 60px;
+        background: var(--green-mid);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-deco::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 60px;
+        border-radius: 60px 60px 0 0;
+        background: var(--amber);
+      }
+
+      .footer-main {
+        padding: 3rem 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .footer-brand {
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-logo-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .footer-logo-circle svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .footer-logo-text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: white;
+        line-height: 1.2;
+      }
+
+      .footer-logo-sub {
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--amber-warm);
+        font-weight: 300;
+      }
+
+      .footer-desc {
+        font-size: 0.8rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 300;
+      }
+
+      .footer-col-title {
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 500;
+        margin-bottom: 1.2rem;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 300;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--amber-warm);
+      }
+
+      .footer-info {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 300;
+        line-height: 2;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.2rem 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-copy {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.25);
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── NAV ─────────────────────────────────────────── -->
+    <nav>
+      <div class="nav-left">
+        <a href="#accueil">Accueil</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">Notre histoire</a>
+      </div>
+
+      <div class="nav-logo-block">
+        <div class="nav-logo-circle">
+          <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17" cy="17" r="16" fill="#2D5A3D" />
+            <text
+              x="17"
+              y="14.5"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="7"
+              font-weight="bold"
+              fill="white"
+            >
+              Vert
+            </text>
+            <text
+              x="17"
+              y="23"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="7"
+              font-weight="bold"
+              fill="white"
+            >
+              Grenier
+            </text>
+          </svg>
+        </div>
+        <div class="nav-logo-text">Vert Grenier</div>
+        <div class="nav-logo-sub">Brocante Vintage</div>
+      </div>
+
+      <div class="nav-right">
+        <a href="#estimation">Estimations</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ── HERO ────────────────────────────────────────── -->
+    <section class="hero" id="accueil">
+      <div class="hero-photos">
+        <!-- Grande cellule gauche -->
+        <div class="photo-cell large illus-chair">
+          <svg viewBox="0 0 300 480" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="480" fill="#C8B090" />
+            <!-- fauteuil vintage stylisé -->
+            <rect x="60" y="180" width="180" height="110" rx="12" fill="#8B5E3C" />
+            <rect x="40" y="160" width="220" height="45" rx="22" fill="#A07048" />
+            <rect x="55" y="290" width="25" height="80" rx="6" fill="#7A4E30" />
+            <rect x="220" y="290" width="25" height="80" rx="6" fill="#7A4E30" />
+            <rect x="80" y="290" width="140" height="18" rx="4" fill="#906840" />
+            <ellipse cx="150" cy="220" rx="70" ry="45" fill="#C4904A" opacity="0.3" />
+            <!-- plante déco -->
+            <rect x="240" y="300" width="8" height="80" rx="4" fill="#5A3820" />
+            <ellipse cx="244" cy="290" rx="28" ry="35" fill="#3A6E4E" opacity="0.85" />
+            <ellipse cx="260" cy="305" rx="18" ry="22" fill="#2D5A3D" opacity="0.8" />
+            <!-- sol -->
+            <rect x="0" y="370" width="300" height="110" fill="#B89870" opacity="0.4" />
+            <text
+              x="150"
+              y="430"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="11"
+              fill="rgba(60,30,10,0.25)"
+              letter-spacing="3"
+            >
+              MOBILIER VINTAGE
+            </text>
+          </svg>
+        </div>
+        <!-- Cellule haut droite -->
+        <div class="photo-cell photo-bg-2">
+          <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="220" fill="#B8A882" />
+            <!-- lampe années 70 -->
+            <rect x="93" y="30" width="14" height="80" rx="5" fill="#8A6848" />
+            <ellipse cx="100" cy="30" rx="12" ry="6" fill="#C49A38" />
+            <path d="M60 110 Q100 130 140 110 L130 170 Q100 185 70 170 Z" fill="#D4A840" />
+            <ellipse cx="100" cy="170" rx="30" ry="8" fill="#B88C2A" />
+            <rect x="85" y="170" width="30" height="12" rx="4" fill="#8A6030" />
+            <rect x="80" y="182" width="40" height="6" rx="3" fill="#7A5020" />
+            <circle cx="100" cy="95" r="8" fill="rgba(255,220,100,0.6)" />
+            <text
+              x="100"
+              y="210"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="8"
+              fill="rgba(60,30,10,0.3)"
+              letter-spacing="2"
+            >
+              LUMINAIRES
+            </text>
+          </svg>
+        </div>
+        <!-- Cellule bas droite -->
+        <div class="photo-cell photo-bg-3">
+          <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="220" fill="#C0A870" />
+            <!-- céramiques -->
+            <ellipse cx="70" cy="150" rx="32" ry="42" fill="#9B6040" />
+            <ellipse cx="70" cy="108" rx="22" ry="8" fill="#B07050" />
+            <rect x="62" y="108" width="16" height="20" rx="3" fill="#9B6040" />
+            <ellipse cx="140" cy="160" rx="24" ry="32" fill="#7A4830" />
+            <ellipse cx="140" cy="128" rx="16" ry="6" fill="#8A5840" />
+            <ellipse cx="105" cy="168" rx="18" ry="24" fill="#B07848" />
+            <ellipse cx="105" cy="144" rx="12" ry="5" fill="#C08858" />
+            <!-- étagère -->
+            <rect x="30" y="180" width="150" height="8" rx="3" fill="#8A6840" />
+            <rect x="35" y="188" width="4" height="22" fill="#7A5830" />
+            <rect x="171" y="188" width="4" height="22" fill="#7A5830" />
+            <text
+              x="100"
+              y="215"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="8"
+              fill="rgba(60,30,10,0.3)"
+              letter-spacing="2"
+            >
+              CÉRAMIQUES
+            </text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">Brocante &amp; Vintage — depuis 1988</div>
+        <h1 class="hero-title">
+          <span class="line-caps">Votre maison mérite</span>
+          <span class="line-big">un peu de</span>
+          <span class="line-italic">charme d'époque ?</span>
+        </h1>
+        <p class="hero-desc">
+          Du mobilier aux céramiques, des luminaires aux textiles — Vert Grenier chine et
+          sélectionne les plus belles pièces des décennies 60 et 70 pour votre intérieur.
+        </p>
+        <a href="#articles" class="btn-outline">Voir la collection</a>
+      </div>
+    </section>
+
+    <!-- ── TAGLINE BLOCK ─────────────────────────────── -->
+    <section class="tagline-block" id="articles">
+      <div class="tagline-deco"></div>
+      <div class="tagline-content">
+        <h2 class="tagline-title">vintage authentique<em> + belles trouvailles.</em></h2>
+        <p class="tagline-text">
+          Dénicher la pièce rare, c'est tout un art. Depuis plus de 35 ans, nous parcourons
+          brocantes, successions et greniers pour vous rapporter ce qui a traversé le temps avec
+          grâce. Chaque article est trié, nettoyé et authentifié avant d'intégrer notre boutique.
+        </p>
+        <a href="#contact" class="btn-outline">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────────────── -->
+    <section class="about" id="about">
+      <div class="about-visual">
+        <div class="about-arch-container">
+          <div class="about-arch">
+            <div class="about-arch-icon">
+              <svg viewBox="0 0 34 34">
+                <circle cx="17" cy="17" r="15" stroke-width="1.2" />
+                <text
+                  x="17"
+                  y="14"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="7"
+                  font-weight="bold"
+                  fill="white"
+                  stroke="none"
+                >
+                  Vert
+                </text>
+                <text
+                  x="17"
+                  y="22"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="7"
+                  font-weight="bold"
+                  fill="white"
+                  stroke="none"
+                >
+                  Grenier
+                </text>
+              </svg>
+            </div>
+            <div class="about-arch-label">Vert Grenier</div>
+            <div class="about-arch-sub">Passionnés depuis 1988</div>
+            <div style="height: 1.5rem"></div>
+            <div
+              style="
+                font-size: 0.72rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--text-mid);
+                line-height: 2.2;
+                text-align: center;
+                font-weight: 400;
+              "
+            >
+              Mobilier<br />Luminaires<br />Céramiques<br />Textiles<br />Art déco
+            </div>
+          </div>
+          <div class="about-arch-bottom"></div>
+        </div>
+        <div class="about-badge">
+          <div class="b-num">35+</div>
+          <div class="b-text">ans<br />d'expertise</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-eyebrow">Notre histoire</div>
+        <h2 class="section-title">Bonjour,<br />nous sommes <em>Vert Grenier.</em></h2>
+        <p class="about-text">
+          Vert Grenier, c'est une équipe de passionnés prête à vous accompagner dans vos projets
+          déco. Que vous cherchiez une pièce maîtresse pour votre salon ou souhaitiez faire estimer
+          vos trésors familiaux, nous sommes là pour vous aider.
+        </p>
+        <p class="about-text">
+          Notre approche éclectique du vintage signifie qu'il n'y a pas de règle figée. En mêlant
+          couleurs, textures, époques et styles, nous créons ensemble des intérieurs uniques,
+          chargés de caractère et de personnalité.
+        </p>
+        <a href="#contact" class="btn-amber-outline">En savoir plus sur nous</a>
+      </div>
+    </section>
+
+    <!-- ── SERVICES ───────────────────────────────────── -->
+    <section class="services" id="nos-services">
+      <div class="services-header">
+        <div class="services-eyebrow">Ce que nous proposons</div>
+        <h2 class="services-title">nos <em>services</em></h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- Articles vintages -->
+        <div class="service-card illus-chair">
+          <div class="card-visual">
+            <svg
+              viewBox="0 0 400 300"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%"
+            >
+              <rect width="400" height="300" fill="#C4A87C" />
+              <rect x="100" y="100" width="200" height="110" rx="14" fill="#7A4830" />
+              <rect x="80" y="80" width="240" height="50" rx="25" fill="#8B5A3C" />
+              <rect x="110" y="210" width="28" height="60" rx="7" fill="#6A3828" />
+              <rect x="262" y="210" width="28" height="60" rx="7" fill="#6A3828" />
+              <rect x="130" y="210" width="140" height="20" rx="5" fill="#7A4830" />
+              <ellipse cx="200" cy="155" rx="80" ry="50" fill="#D4904C" opacity="0.25" />
+              <rect x="0" y="260" width="400" height="40" fill="#A88860" opacity="0.4" />
+              <rect x="310" y="160" width="12" height="100" rx="6" fill="#5A3020" />
+              <ellipse cx="316" cy="150" rx="35" ry="40" fill="#3A6E4E" opacity="0.9" />
+              <ellipse cx="330" cy="168" rx="22" ry="26" fill="#2D5A3D" opacity="0.85" />
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <p class="card-desc">
+            Mobilier, luminaires, céramiques et objets déco des années 60 & 70, triés et
+            authentifiés.
+          </p>
+          <div class="card-label">
+            <svg viewBox="0 0 16 16"><path d="M2 8h12M8 2l6 6-6 6" /></svg>
+            Articles Vintages
+          </div>
+        </div>
+
+        <!-- Estimations -->
+        <div class="service-card illus-visit">
+          <div class="card-visual">
+            <svg
+              viewBox="0 0 400 300"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%"
+            >
+              <rect width="400" height="300" fill="#D0B888" />
+              <!-- maison stylisée -->
+              <polygon points="200,50 90,150 310,150" fill="#8B5A3C" />
+              <rect x="110" y="150" width="180" height="120" fill="#A07048" />
+              <rect x="165" y="195" width="70" height="75" rx="3" fill="#7A4830" />
+              <rect x="175" y="165" width="45" height="35" rx="3" fill="#C4A870" />
+              <rect x="183" y="173" width="12" height="12" fill="#D4B880" />
+              <rect x="205" y="173" width="12" height="12" fill="#D4B880" />
+              <!-- loupe -->
+              <circle cx="310" cy="100" r="40" fill="none" stroke="#2D5A3D" stroke-width="6" />
+              <line
+                x1="338"
+                y1="128"
+                x2="360"
+                y2="152"
+                stroke="#2D5A3D"
+                stroke-width="7"
+                stroke-linecap="round"
+              />
+              <circle cx="310" cy="100" r="28" fill="rgba(45,90,61,0.12)" />
+              <!-- étoile valeur -->
+              <text
+                x="310"
+                y="108"
+                text-anchor="middle"
+                font-family="Georgia,serif"
+                font-size="26"
+                font-weight="bold"
+                fill="#C4881A"
+              >
+                €
+              </text>
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <p class="card-desc">
+            Notre expert se déplace chez vous pour estimer vos pièces, meubles ou collections sans
+            engagement.
+          </p>
+          <div class="card-label">
+            <svg viewBox="0 0 16 16">
+              <circle cx="8" cy="8" r="6" />
+              <path d="M8 5v3l2 2" />
+            </svg>
+            Estimations à Domicile
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ───────────────────────────────── -->
+    <section class="testimonials">
+      <div class="testimonials-header">
+        <div class="t-eyebrow">Ils nous font confiance</div>
+        <h2 class="t-title">ce qu'ils <em>en disent</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="t-card">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+          </div>
+          <p class="t-text">
+            J'ai trouvé un fauteuil Steiner en parfait état. Des connaissances pointues, une passion
+            communicative et une honnêteté rare. Vert Grenier, c'est tout ça à la fois.
+          </p>
+          <div class="t-author">— Marie T., Toulouse</div>
+        </div>
+        <div class="t-card">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+          </div>
+          <p class="t-text">
+            L'estimation à domicile m'a permis de découvrir que ma lampe des années 70 valait bien
+            plus que je ne pensais. Service rapide, professionnel et bienveillant.
+          </p>
+          <div class="t-author">— Jean-Paul M., Montauban</div>
+        </div>
+        <div class="t-card">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+            <div class="t-star"></div>
+          </div>
+          <p class="t-text">
+            Une adresse incontournable pour tout amateur de vintage. Le conseil est précis, la
+            sélection toujours renouvelée. Je reviens à chaque nouvelle livraison !
+          </p>
+          <div class="t-author">— Sylvie R., Albi</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ESTIMATION ─────────────────────────────────── -->
+    <section class="estimation" id="estimation">
+      <div class="estimation-content">
+        <div class="estimation-eyebrow">Service à domicile</div>
+        <h2 class="estimation-title">
+          Faites estimer<br />vos <em>trésors</em><br />sans vous déplacer
+        </h2>
+        <p class="estimation-text">
+          Déménagement, succession ou simple curiosité ? Notre expert se déplace chez vous, dans un
+          rayon de 80 km, pour évaluer vos objets, meubles ou collections en toute confidentialité.
+        </p>
+        <a href="#contact" class="btn-amber-outline" style="align-self: flex-start"
+          >Prendre rendez-vous</a
+        >
+
+        <div class="estimation-steps" style="margin-top: 2.5rem">
+          <div class="estep">
+            <div class="estep-num">1</div>
+            <div class="estep-body">
+              <div class="estep-title">Prise de contact</div>
+              <div class="estep-desc">
+                Appelez-nous ou remplissez le formulaire. Confirmation sous 24h.
+              </div>
+            </div>
+          </div>
+          <div class="estep">
+            <div class="estep-num">2</div>
+            <div class="estep-body">
+              <div class="estep-title">Visite à domicile</div>
+              <div class="estep-desc">
+                Notre expert examine vos pièces dans les meilleures conditions.
+              </div>
+            </div>
+          </div>
+          <div class="estep">
+            <div class="estep-num">3</div>
+            <div class="estep-body">
+              <div class="estep-title">Rapport d'estimation</div>
+              <div class="estep-desc">
+                Vous recevez une estimation écrite et détaillée sous 48h.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="estimation-visual">
+        <div class="big-circle-stat">
+          <div class="num">48h</div>
+          <div class="label">Délai de<br />réponse garanti</div>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <div class="mn">80 km</div>
+            <div class="ml">Rayon<br />d'intervention</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mn">100%</div>
+            <div class="ml">Gratuit &amp;<br />sans engagement</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mn">1 200+</div>
+            <div class="ml">Estimations<br />réalisées</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────── -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-eyebrow">Contactez-nous</div>
+        <h2 class="contact-title">Parlons de<br /><em>votre projet vintage</em></h2>
+        <p class="contact-sub">
+          Une question sur une pièce, une demande d'estimation ou simplement l'envie de passer nous
+          voir ? Écrivez-nous, nous répondons toujours avec plaisir.
+        </p>
+
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" placeholder="Votre nom complet" />
+            </div>
+            <div class="form-field">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" placeholder="06 xx xx xx xx" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votre@email.fr" />
+          </div>
+          <div class="form-field">
+            <label for="service">Service souhaité</label>
+            <select id="service">
+              <option value="">— Choisissez un service —</option>
+              <option>Articles vintages — renseignement</option>
+              <option>Estimation à domicile</option>
+              <option>Vente ou dépôt d'articles</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Votre message</label>
+            <textarea
+              id="message"
+              placeholder="Décrivez vos pièces, votre projet ou votre question..."
+            ></textarea>
+          </div>
+          <button type="submit" class="form-submit">Envoyer le message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────── -->
+    <footer>
+      <div class="footer-tagline">
+        <div class="footer-tagline-text">
+          Rien ne vaut rentrer chez soi et retrouver <em>l'âme des belles années.</em>
+        </div>
+      </div>
+      <div class="footer-deco"></div>
+
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-circle">
+              <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="14" fill="#2D5A3D" />
+                <text
+                  x="15"
+                  y="13"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="6"
+                  font-weight="bold"
+                  fill="white"
+                >
+                  Vert
+                </text>
+                <text
+                  x="15"
+                  y="20.5"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="6"
+                  font-weight="bold"
+                  fill="white"
+                >
+                  Grenier
+                </text>
+              </svg>
+            </div>
+            <div>
+              <div class="footer-logo-text">Vert Grenier</div>
+              <div class="footer-logo-sub">Brocante Vintage</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Spécialiste du mobilier et des objets des années 60 & 70 depuis 1988. Estimations, vente
+            et conseil à votre service.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#articles">Articles vintages</a></li>
+            <li><a href="#about">Notre histoire</a></li>
+            <li><a href="#estimation">Estimations à domicile</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Nous trouver</div>
+          <div class="footer-info">
+            12 rue du Faubourg<br />
+            31000 Toulouse<br /><br />
+            05 61 xx xx xx<br />
+            contact@vertgrenier.fr<br /><br />
+            Mar–Sam : 10h–19h
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Vert Grenier — Tous droits réservés</div>
+        <div class="footer-copy">Mentions légales · Politique de confidentialité</div>
+      </div>
+    </footer>
+  </body>
+</html>

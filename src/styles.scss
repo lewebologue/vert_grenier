@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+
+:root {
+  --green: #2d5a3d;
+  --green-mid: #3a6e4e;
+  --green-light: #4e8c64;
+  --cream: #f5efe3;
+  --cream-dark: #ebe2ce;
+  --amber: #c4881a;
+  --amber-warm: #d4a43a;
+  --rust: #8b4a2a;
+  --rust-mid: #a35a35;
+  --mustard: #c49a22;
+  --mustard-bg: #c89f28;
+  --terracotta: #9b5a3c;
+  --white: #ffffff;
+  --text-dark: #2a2018;
+  --text-mid: #5a4a35;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}

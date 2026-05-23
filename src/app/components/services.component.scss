@@ -1,0 +1,129 @@
+/* ─── SERVICES ────────────────────────────────────────── */
+.services {
+  background: var(--mustard-bg);
+  padding: 5rem 4rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.services-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.1em;
+
+  em {
+    font-style: italic;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--cream-dark);
+  cursor: pointer;
+}
+
+.card-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+  transition: background 0.3s;
+}
+
+.service-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  background: var(--amber);
+  color: white;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+}
+
+.card-desc {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  font-weight: 300;
+}
+
+.service-card:hover .card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.illus-chair {
+  background: #c4b090;
+}
+
+.illus-lamp {
+  background: #a89878;
+}
+
+.illus-ceramics {
+  background: #b8a070;
+}
+
+.illus-visit {
+  background: #d0b888;
+}

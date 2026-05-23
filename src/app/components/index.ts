@@ -1,0 +1,10 @@
+export { HeaderComponent } from './header.component';
+export { HeroComponent } from './hero.component';
+export { TaglineComponent } from './tagline.component';
+export { AboutComponent } from './about.component';
+export { ServicesComponent } from './services.component';
+export { TestimonialsComponent } from './testimonials.component';
+export { EstimationComponent } from './estimation.component';
+export { ContactComponent } from './contact.component';
+export { FooterComponent } from './footer.component';
+export { LayoutComponent } from './layout.component';

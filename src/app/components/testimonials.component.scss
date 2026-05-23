@@ -1,0 +1,123 @@
+/* ─── TESTIMONIALS ────────────────────────────────────── */
+.testimonials {
+  background: var(--cream-dark);
+  padding: 6rem 4rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(196, 136, 26, 0.12);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -80px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(45, 90, 61, 0.1);
+  }
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.t-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.t-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  letter-spacing: 0.08em;
+
+  em {
+    font-style: italic;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.t-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.t-quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--amber);
+  line-height: 0.8;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.t-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.t-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 0.8rem;
+}
+
+.t-star {
+  width: 10px;
+  height: 10px;
+  background: var(--amber);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.t-author {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  font-weight: 500;
+}
