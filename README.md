@@ -1,59 +1,88 @@
-# VertGrenier
+# 🌿 Vert Grenier — Brocante Vintage
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+Site vitrine pour **Vert Grenier**, spécialiste du mobilier et des objets vintage des années 60 & 70.
 
-## Development server
+🌐 **Site en ligne** : [https://lewebologue.github.io/vert_grenier/](https://lewebologue.github.io/vert_grenier/)
 
-To start a local development server, run:
+---
+
+## 🛠️ Stack technique
+
+- [Angular](https://angular.dev/) v21 — standalone components, signals, OnPush
+- [TypeScript](https://www.typescriptlang.org/) — mode strict
+- [SCSS](https://sass-lang.com/) — styles par composant
+
+---
+
+## 🚀 Démarrer le projet en local
+
+### Prérequis
+
+- Node.js `>= 22`
+- Angular CLI `>= 21`
+
+### Installation
+
+```bash
+npm install
+```
+
+### Serveur de développement
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ouvrez ensuite [http://localhost:4200](http://localhost:4200) dans votre navigateur.  
+L'application se recharge automatiquement à chaque modification.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🏗️ Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Les fichiers compilés sont générés dans le dossier `dist/`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🧪 Tests unitaires
+
+Les tests utilisent [Vitest](https://vitest.dev/).
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📁 Structure du projet
 
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── components/         # Composants standalone
+│   │   ├── header          # Barre de navigation
+│   │   ├── hero            # Section d'accueil
+│   │   ├── about           # Notre histoire
+│   │   ├── services        # Nos services
+│   │   ├── testimonials    # Témoignages
+│   │   ├── estimation      # Estimations à domicile
+│   │   ├── contact         # Formulaire de contact
+│   │   ├── tagline         # Accroche
+│   │   ├── footer          # Pied de page
+│   │   └── layout          # Composant de mise en page
+│   ├── app.config.ts       # Configuration de l'application
+│   ├── app.routes.ts       # Déclaration des routes
+│   └── app.ts              # Composant racine
+├── styles.scss             # Styles globaux
+└── index.html
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📄 Licence
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 Vert Grenier — Tous droits réservés.
