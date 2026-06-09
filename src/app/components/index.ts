@@ -7,4 +7,3 @@ export { TestimonialsComponent } from './testimonials/testimonials.component';
 export { EstimationComponent } from './estimation/estimation.component';
 export { ContactComponent } from './contact/contact.component';
 export { FooterComponent } from './footer/footer.component';
-export { LayoutComponent } from './layout/layout.component';

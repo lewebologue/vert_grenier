@@ -8,29 +8,7 @@ interface Testimonial {
 
 @Component({
   selector: 'app-testimonials',
-  standalone: true,
-  template: `
-    <section class="testimonials">
-      <div class="testimonials-header">
-        <div class="t-eyebrow">Ils nous font confiance</div>
-        <h2 class="t-title">ce qu'ils <em>en disent</em></h2>
-      </div>
-      <div class="testimonials-grid">
-        @for (testimonial of testimonials; track $index) {
-          <div class="t-card">
-            <div class="t-quote-mark">"</div>
-            <div class="t-stars">
-              @for (_ of getStars(testimonial.rating); track $index) {
-                <div class="t-star"></div>
-              }
-            </div>
-            <p class="t-text">{{ testimonial.text }}</p>
-            <div class="t-author">— {{ testimonial.author }}</div>
-          </div>
-        }
-      </div>
-    </section>
-  `,
+  templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
