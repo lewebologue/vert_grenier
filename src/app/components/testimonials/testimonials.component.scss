@@ -1,17 +1,17 @@
 /* ─── TESTIMONIALS ────────────────────────────────────── */
 .testimonials {
   background: var(--cream-dark);
-  padding: 6rem 4rem;
+  padding: 2.3rem 1rem;
   position: relative;
   overflow: hidden;
 
   &::before {
     content: '';
     position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 350px;
-    height: 350px;
+    top: -110px;
+    right: -120px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background: rgba(196, 136, 26, 0.12);
   }
@@ -19,10 +19,10 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -120px;
-    left: -80px;
-    width: 280px;
-    height: 280px;
+    bottom: -110px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: rgba(45, 90, 61, 0.1);
   }
@@ -30,23 +30,23 @@
 
 .testimonials-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.6rem;
   position: relative;
   z-index: 1;
 }
 
 .t-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--amber);
   font-weight: 400;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .t-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(1.4rem, 8vw, 2rem);
   font-weight: 300;
   color: var(--text-dark);
   letter-spacing: 0.08em;
@@ -57,8 +57,8 @@
 }
 
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 2px;
   position: relative;
   z-index: 1;
@@ -66,34 +66,34 @@
 
 .t-card {
   background: white;
-  padding: 2.5rem 2rem;
+  padding: 1.7rem 1.2rem;
   position: relative;
 }
 
 .t-quote-mark {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: var(--amber);
   line-height: 0.8;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   opacity: 0.3;
 }
 
 .t-text {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
   font-weight: 400;
 }
 
 .t-stars {
   display: flex;
   gap: 3px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .t-star {
@@ -115,9 +115,120 @@
 }
 
 .t-author {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-mid);
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    padding: 4rem 2rem;
+
+    &::before {
+      width: 280px;
+      height: 280px;
+    }
+
+    &::after {
+      width: 230px;
+      height: 230px;
+    }
+  }
+
+  .testimonials-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .t-eyebrow {
+    font-size: 0.62rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .t-title {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+  }
+
+  .testimonials-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .t-card {
+    flex: 1 1 calc(50% - 2px);
+    padding: 2.1rem 1.6rem;
+  }
+
+  .t-quote-mark {
+    font-size: 3.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .t-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.3rem;
+  }
+
+  .t-author {
+    font-size: 0.63rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials {
+    padding: 6rem 4rem;
+
+    &::before {
+      top: -100px;
+      right: -100px;
+      width: 350px;
+      height: 350px;
+    }
+
+    &::after {
+      bottom: -120px;
+      left: -80px;
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  .testimonials-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .t-eyebrow {
+    font-size: 0.65rem;
+  }
+
+  .t-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+  }
+
+  .testimonials-grid {
+    flex-wrap: nowrap;
+  }
+
+  .t-card {
+    flex: 1;
+    padding: 2.5rem 2rem;
+  }
+
+  .t-quote-mark {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .t-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .t-author {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
 }

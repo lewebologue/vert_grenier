@@ -1,40 +1,33 @@
 /* ─── TAGLINE BLOCK ───────────────────────────────────── */
 .tagline-block {
   background: var(--cream);
-  padding: 6rem 5rem;
+  padding: 2rem 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 1rem;
   position: relative;
   overflow: hidden;
 }
 
 .tagline-deco {
-  position: absolute;
-  left: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: var(--green-mid);
-  flex-shrink: 0;
+  display: none;
 }
 
 .tagline-content {
-  margin-left: 180px;
+  margin-left: 0;
   text-align: center;
   flex: 1;
 }
 
 .tagline-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: 1.2rem;
   font-weight: 300;
   color: var(--text-dark);
-  letter-spacing: 0.08em;
-  margin-bottom: 1.2rem;
-  line-height: 1.3;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
 
   em {
     font-style: italic;
@@ -43,20 +36,20 @@
 }
 
 .tagline-text {
-  font-size: 0.88rem;
-  line-height: 1.9;
+  font-size: 0.72rem;
+  line-height: 1.55;
   color: var(--text-mid);
   font-weight: 300;
-  max-width: 500px;
-  margin: 0 auto 2rem;
+  max-width: 100%;
+  margin: 0 auto 1.2rem;
 }
 
 .btn-outline {
   display: inline-block;
   border: 1.5px solid var(--green);
   color: var(--green);
-  padding: 0.75rem 2rem;
-  font-size: 0.68rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.55rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -71,17 +64,47 @@
   }
 }
 
-/* Mobile Responsive */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
+  .tagline-block {
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .tagline-title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+  }
+
+  .tagline-text {
+    font-size: 0.75rem;
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .btn-outline {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .tagline-block {
     padding: 4rem 3rem;
+    flex-direction: row;
+    align-items: center;
     gap: 2.5rem;
   }
 
   .tagline-deco {
+    display: block;
+    position: absolute;
     left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 180px;
     height: 180px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
   }
 
   .tagline-content {
@@ -96,61 +119,41 @@
   .tagline-text {
     font-size: 0.8rem;
     max-width: 450px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1280px) {
   .tagline-block {
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
-    flex-direction: column;
-    align-items: center;
+    padding: 6rem 5rem;
+    gap: 4rem;
   }
 
   .tagline-deco {
-    display: none;
+    left: -80px;
+    width: 220px;
+    height: 220px;
   }
 
   .tagline-content {
-    margin-left: 0;
-    text-align: center;
+    margin-left: 180px;
   }
 
   .tagline-title {
-    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
   }
 
   .tagline-text {
-    font-size: 0.75rem;
-    max-width: 100%;
-    margin: 0 auto 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    max-width: 500px;
   }
 
   .btn-outline {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .tagline-block {
-    padding: 2rem 1rem;
-    gap: 1rem;
-  }
-
-  .tagline-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .tagline-text {
-    font-size: 0.7rem;
-    margin: 0 auto 1.2rem;
-    line-height: 1.5;
-  }
-
-  .btn-outline {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.55rem;
+    padding: 0.75rem 2rem;
+    font-size: 0.68rem;
   }
 }

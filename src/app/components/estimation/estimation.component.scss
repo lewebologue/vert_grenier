@@ -1,9 +1,8 @@
 /* ─── ESTIMATION ──────────────────────────────────────── */
 .estimation {
   background: var(--green);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -11,25 +10,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 4rem 5rem 5rem;
+  padding: 2rem 1rem;
 }
 
 .estimation-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--amber-warm);
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .estimation-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: 1.35rem;
   font-weight: 700;
   color: white;
-  line-height: 1.15;
-  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
 
   em {
     font-style: italic;
@@ -38,25 +37,24 @@
 }
 
 .estimation-text {
-  font-size: 0.88rem;
-  line-height: 1.9;
+  font-size: 0.78rem;
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.65);
   font-weight: 300;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.4rem;
 }
 
 .estimation-steps {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  margin-top: 2.5rem;
+  margin-top: 1.2rem;
 }
 
 .estep {
   display: flex;
   align-items: flex-start;
-  gap: 1.3rem;
-  padding: 1.2rem 0;
+  gap: 0.9rem;
+  padding: 0.9rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   &:last-child {
@@ -65,32 +63,32 @@
 }
 
 .estep-num {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Playfair Display', serif;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--amber-warm);
   flex-shrink: 0;
 }
 
 .estep-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: white;
   margin-bottom: 0.2rem;
 }
 
 .estep-desc {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .estimation-visual {
@@ -99,18 +97,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 4rem;
+  gap: 1.4rem;
+  padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
 
   &::before {
     content: '';
     position: absolute;
-    bottom: -80px;
-    right: -80px;
-    width: 260px;
-    height: 260px;
+    bottom: -90px;
+    right: -90px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
   }
@@ -118,18 +116,18 @@
   &::after {
     content: '';
     position: absolute;
-    top: -60px;
-    left: -60px;
-    width: 200px;
-    height: 200px;
+    top: -80px;
+    left: -80px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
   }
 }
 
 .big-circle-stat {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid var(--amber-warm);
   display: flex;
@@ -137,31 +135,34 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1.2rem;
   position: relative;
   z-index: 1;
 
   .num {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: white;
     line-height: 1;
   }
 
   .label {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--amber-warm);
-    margin-top: 0.4rem;
-    line-height: 1.5;
+    margin-top: 0.3rem;
+    line-height: 1.4;
   }
 }
 
 .mini-stats {
   display: flex;
-  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
   position: relative;
   z-index: 1;
 }
@@ -169,18 +170,19 @@
 .mini-stat {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 0.8rem;
+  padding-top: 0.6rem;
+  min-width: 92px;
 
   .mn {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 900;
     color: white;
   }
 
   .ml {
-    font-size: 0.58rem;
-    letter-spacing: 0.15em;
+    font-size: 0.5rem;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.45);
   }
@@ -190,8 +192,8 @@
   display: inline-block;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   color: white;
-  padding: 0.75rem 2rem;
-  font-size: 0.68rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.55rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -200,5 +202,202 @@
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@media (min-width: 768px) {
+  .estimation-content {
+    padding: 3rem 2rem;
+  }
+
+  .estimation-eyebrow {
+    font-size: 0.62rem;
+    margin-bottom: 1rem;
+  }
+
+  .estimation-title {
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+  }
+
+  .estimation-text {
+    font-size: 0.84rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .estimation-steps {
+    margin-top: 1.8rem;
+  }
+
+  .estep {
+    gap: 1.1rem;
+    padding: 1.05rem 0;
+  }
+
+  .estep-num {
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+  }
+
+  .estep-title {
+    font-size: 0.83rem;
+  }
+
+  .estep-desc {
+    font-size: 0.75rem;
+  }
+
+  .estimation-visual {
+    padding: 3rem 2rem;
+    gap: 1.8rem;
+  }
+
+  .big-circle-stat {
+    width: 180px;
+    height: 180px;
+    padding: 1.6rem;
+
+    .num {
+      font-size: 2.5rem;
+    }
+
+    .label {
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+    }
+  }
+
+  .mini-stats {
+    gap: 1.2rem;
+  }
+
+  .mini-stat {
+    min-width: 108px;
+
+    .mn {
+      font-size: 1.25rem;
+    }
+
+    .ml {
+      font-size: 0.55rem;
+    }
+  }
+
+  .btn-amber-outline {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .estimation {
+    flex-direction: row;
+    min-height: 55vh;
+  }
+
+  .estimation-content,
+  .estimation-visual {
+    flex: 1;
+  }
+
+  .estimation-content {
+    padding: 5rem 4rem 5rem 5rem;
+  }
+
+  .estimation-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .estimation-text {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .estimation-steps {
+    margin-top: 2.5rem;
+  }
+
+  .estep {
+    gap: 1.3rem;
+    padding: 1.2rem 0;
+  }
+
+  .estep-num {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .estep-title {
+    font-size: 0.85rem;
+  }
+
+  .estep-desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .estimation-visual {
+    padding: 4rem;
+    gap: 2rem;
+
+    &::before {
+      bottom: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+    }
+
+    &::after {
+      top: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .big-circle-stat {
+    width: 200px;
+    height: 200px;
+    padding: 2rem;
+
+    .num {
+      font-size: 3rem;
+    }
+
+    .label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+  }
+
+  .mini-stats {
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+
+  .mini-stat {
+    min-width: auto;
+    padding-top: 0.8rem;
+
+    .mn {
+      font-size: 1.4rem;
+    }
+
+    .ml {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  .btn-amber-outline {
+    padding: 0.75rem 2rem;
+    font-size: 0.68rem;
   }
 }

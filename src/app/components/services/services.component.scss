@@ -1,29 +1,29 @@
 /* ─── SERVICES ────────────────────────────────────────── */
 .services {
   background: var(--mustard-bg);
-  padding: 5rem 4rem;
+  padding: 2.2rem 1rem;
 }
 
 .services-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
 }
 
 .services-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .services-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 9vw, 2.1rem);
   font-weight: 300;
   color: white;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 
   em {
     font-style: italic;
@@ -31,8 +31,8 @@
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3px;
   max-width: 900px;
   margin: 0 auto;
@@ -68,22 +68,22 @@
 
 .card-label {
   position: absolute;
-  bottom: 1.2rem;
-  left: 1.2rem;
+  bottom: 0.9rem;
+  left: 0.9rem;
   background: var(--amber);
   color: white;
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 0.4rem 0.9rem;
+  padding: 0.35rem 0.7rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
 
   svg {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     stroke: white;
     fill: none;
     stroke-width: 2;
@@ -93,23 +93,18 @@
 
 .card-desc {
   position: absolute;
-  bottom: 3.5rem;
-  left: 1.2rem;
-  right: 1.2rem;
+  bottom: 2.8rem;
+  left: 0.9rem;
+  right: 0.9rem;
   color: white;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(8px);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.3s,
     transform 0.3s;
   font-weight: 300;
-}
-
-.service-card:hover .card-desc {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .illus-chair {
@@ -126,4 +121,88 @@
 
 .illus-visit {
   background: #d0b888;
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding: 3.5rem 2rem;
+  }
+
+  .services-header {
+    margin-bottom: 2.2rem;
+  }
+
+  .services-eyebrow {
+    font-size: 0.62rem;
+  }
+
+  .services-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .services-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .service-card {
+    flex: 1 1 calc(50% - 3px);
+  }
+
+  .card-label {
+    bottom: 1.05rem;
+    left: 1.05rem;
+    font-size: 0.6rem;
+    padding: 0.38rem 0.82rem;
+  }
+
+  .card-desc {
+    bottom: 3.15rem;
+    left: 1.05rem;
+    right: 1.05rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .service-card:hover .card-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    padding: 5rem 4rem;
+  }
+
+  .services-header {
+    margin-bottom: 3rem;
+  }
+
+  .services-eyebrow {
+    font-size: 0.65rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .services-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: 0.1em;
+  }
+
+  .card-label {
+    bottom: 1.2rem;
+    left: 1.2rem;
+    font-size: 0.62rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .card-desc {
+    bottom: 3.5rem;
+    left: 1.2rem;
+    right: 1.2rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
 }
