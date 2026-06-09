@@ -35,9 +35,9 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
         <div class="photo-cell photo-bg-2">
           <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
             <rect width="200" height="220" fill="#B8A882" />
-            <rect x="93" y="30" width="14" height="80" rx="5" fill="#8A6848" />
-            <ellipse cx="100" cy="30" rx="12" ry="6" fill="#C49A38" />
-            <path d="M60 110 Q100 130 140 110 L130 170 Q100 185 70 170 Z" fill="#D4A840" />
+            <rect x="93" y="110" width="14" height="80" rx="5" fill="#8A6848" />
+            <ellipse cx="100" cy="110" rx="12" ry="6" fill="#C49A38" />
+            <path d="M70 55 Q100 40 130 55 L140 115 Q100 133 60 115 Z" fill="#D4A840" />
             <ellipse cx="100" cy="170" rx="30" ry="8" fill="#B88C2A" />
             <rect x="85" y="170" width="30" height="12" rx="4" fill="#8A6030" />
             <rect x="80" y="182" width="40" height="6" rx="3" fill="#7A5020" />
