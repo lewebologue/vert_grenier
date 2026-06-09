@@ -8,7 +8,7 @@ Site vitrine pour **Vert Grenier**, spécialiste du mobilier et des objets vinta
 
 ## 🛠️ Stack technique
 
-- [Angular](https://angular.dev/) v21 — standalone components, signals, OnPush
+- [Angular](https://angular.dev/) v21 — standalone components, signals, OnPush, lazy loading
 - [TypeScript](https://www.typescriptlang.org/) — mode strict
 - [SCSS](https://sass-lang.com/) — styles par composant
 
@@ -63,21 +63,25 @@ ng test
 ```
 src/
 ├── app/
-│   ├── components/         # Composants standalone
-│   │   ├── header          # Barre de navigation
-│   │   ├── hero            # Section d'accueil
-│   │   ├── about           # Notre histoire
-│   │   ├── services        # Nos services
-│   │   ├── testimonials    # Témoignages
-│   │   ├── estimation      # Estimations à domicile
-│   │   ├── contact         # Formulaire de contact
-│   │   ├── tagline         # Accroche
-│   │   ├── footer          # Pied de page
-│   │   └── layout          # Composant de mise en page
-│   ├── app.config.ts       # Configuration de l'application
-│   ├── app.routes.ts       # Déclaration des routes
-│   └── app.ts              # Composant racine
-├── styles.scss             # Styles globaux
+│   ├── components/             # Composants réutilisables
+│   │   ├── header/             # Barre de navigation
+│   │   ├── hero/               # Section d'accueil
+│   │   ├── about/              # Notre histoire
+│   │   ├── services/           # Nos services
+│   │   ├── testimonials/       # Témoignages
+│   │   ├── estimation/         # Estimations à domicile
+│   │   ├── contact/            # Formulaire de contact
+│   │   ├── tagline/            # Accroche
+│   │   ├── footer/             # Pied de page
+│   │   └── index.ts            # Barrel file (exports centralisés)
+│   ├── pages/
+│   │   └── home/               # Page d'accueil (lazy loaded)
+│   │       ├── home.component.ts
+│   │       └── home.component.html
+│   ├── app.config.ts           # Configuration de l'application
+│   ├── app.routes.ts           # Déclaration des routes
+│   └── app.ts                  # Composant racine
+├── styles.scss                 # Styles globaux
 └── index.html
 ```
 
