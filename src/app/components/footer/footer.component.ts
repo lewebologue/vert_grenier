@@ -18,8 +18,28 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <div class="footer-logo-circle">
               <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14" fill="#2D5A3D" />
-                <text x="15" y="13" text-anchor="middle" font-family="Georgia,serif" font-size="6" font-weight="bold" fill="white">Vert</text>
-                <text x="15" y="20.5" text-anchor="middle" font-family="Georgia,serif" font-size="6" font-weight="bold" fill="white">Grenier</text>
+                <text
+                  x="15"
+                  y="13"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="6"
+                  font-weight="bold"
+                  fill="white"
+                >
+                  Vert
+                </text>
+                <text
+                  x="15"
+                  y="20.5"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="6"
+                  font-weight="bold"
+                  fill="white"
+                >
+                  Grenier
+                </text>
               </svg>
             </div>
             <div>
@@ -28,8 +48,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             </div>
           </div>
           <p class="footer-desc">
-            Spécialiste du mobilier et des objets des années 60 &amp; 70 depuis 1988. Estimations, vente
-            et conseil à votre service.
+            Spécialiste du mobilier et des objets des années 60 &amp; 70 depuis 1988. Estimations,
+            vente et conseil à votre service.
           </p>
         </div>
 

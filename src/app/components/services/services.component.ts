@@ -13,7 +13,11 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
       <div class="services-grid">
         <div class="service-card illus-chair">
           <div class="card-visual">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%">
+            <svg
+              viewBox="0 0 400 300"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%"
+            >
               <rect width="400" height="300" fill="#C4A87C" />
               <rect x="100" y="100" width="200" height="110" rx="14" fill="#7A4830" />
               <rect x="80" y="80" width="240" height="50" rx="25" fill="#8B5A3C" />
@@ -34,7 +38,11 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
         <div class="service-card illus-visit">
           <div class="card-visual">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%">
+            <svg
+              viewBox="0 0 400 300"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%"
+            >
               <rect width="400" height="300" fill="#D0B888" />
               <polygon points="200,50 90,150 310,150" fill="#8B5A3C" />
               <rect x="110" y="150" width="180" height="120" fill="#A07048" />

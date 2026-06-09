@@ -19,31 +19,16 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
           <div class="form-row">
             <div class="form-field">
               <label for="nom">Nom</label>
-              <input 
-                type="text" 
-                id="nom" 
-                placeholder="Votre nom complet"
-                formControlName="nom"
-              />
+              <input type="text" id="nom" placeholder="Votre nom complet" formControlName="nom" />
             </div>
             <div class="form-field">
               <label for="tel">Téléphone</label>
-              <input 
-                type="tel" 
-                id="tel" 
-                placeholder="06 xx xx xx xx"
-                formControlName="tel"
-              />
+              <input type="tel" id="tel" placeholder="06 xx xx xx xx" formControlName="tel" />
             </div>
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              placeholder="votre@email.fr"
-              formControlName="email"
-            />
+            <input type="email" id="email" placeholder="votre@email.fr" formControlName="email" />
           </div>
           <div class="form-field">
             <label for="service">Service souhaité</label>

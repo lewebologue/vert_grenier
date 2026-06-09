@@ -14,7 +14,9 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
           Déménagement, succession ou simple curiosité ? Notre expert se déplace chez vous, dans un
           rayon de 80 km, pour évaluer vos objets, meubles ou collections en toute confidentialité.
         </p>
-        <a href="#contact" class="btn-amber-outline" [style.align-self]="'flex-start'">Prendre rendez-vous</a>
+        <a href="#contact" class="btn-amber-outline" [style.align-self]="'flex-start'"
+          >Prendre rendez-vous</a
+        >
 
         <div class="estimation-steps">
           <div class="estep">

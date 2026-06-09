@@ -37,12 +37,12 @@ interface Testimonial {
 export class TestimonialsComponent {
   testimonials: Testimonial[] = [
     {
-      text: 'J\'ai trouvé un fauteuil Steiner en parfait état. Des connaissances pointues, une passion communicative et une honnêteté rare. Vert Grenier, c\'est tout ça à la fois.',
+      text: "J'ai trouvé un fauteuil Steiner en parfait état. Des connaissances pointues, une passion communicative et une honnêteté rare. Vert Grenier, c'est tout ça à la fois.",
       author: 'Marie T., Toulouse',
       rating: 5,
     },
     {
-      text: 'L\'estimation à domicile m\'a permis de découvrir que ma lampe des années 70 valait bien plus que je ne pensais. Service rapide, professionnel et bienveillant.',
+      text: "L'estimation à domicile m'a permis de découvrir que ma lampe des années 70 valait bien plus que je ne pensais. Service rapide, professionnel et bienveillant.",
       author: 'Jean-Paul M., Montauban',
       rating: 5,
     },

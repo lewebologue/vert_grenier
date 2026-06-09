@@ -19,7 +19,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <ellipse cx="244" cy="290" rx="28" ry="35" fill="#3A6E4E" opacity="0.85" />
             <ellipse cx="260" cy="305" rx="18" ry="22" fill="#2D5A3D" opacity="0.8" />
             <rect x="0" y="370" width="300" height="110" fill="#B89870" opacity="0.4" />
-            <text x="150" y="430" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="rgba(60,30,10,0.25)" letter-spacing="3">MOBILIER VINTAGE</text>
+            <text
+              x="150"
+              y="430"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="11"
+              fill="rgba(60,30,10,0.25)"
+              letter-spacing="3"
+            >
+              MOBILIER VINTAGE
+            </text>
           </svg>
         </div>
         <div class="photo-cell photo-bg-2">
@@ -32,7 +42,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <rect x="85" y="170" width="30" height="12" rx="4" fill="#8A6030" />
             <rect x="80" y="182" width="40" height="6" rx="3" fill="#7A5020" />
             <circle cx="100" cy="95" r="8" fill="rgba(255,220,100,0.6)" />
-            <text x="100" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(60,30,10,0.3)" letter-spacing="2">LUMINAIRES</text>
+            <text
+              x="100"
+              y="210"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="8"
+              fill="rgba(60,30,10,0.3)"
+              letter-spacing="2"
+            >
+              LUMINAIRES
+            </text>
           </svg>
         </div>
         <div class="photo-cell photo-bg-3">
@@ -48,7 +68,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <rect x="30" y="180" width="150" height="8" rx="3" fill="#8A6840" />
             <rect x="35" y="188" width="4" height="22" fill="#7A5830" />
             <rect x="171" y="188" width="4" height="22" fill="#7A5830" />
-            <text x="100" y="215" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(60,30,10,0.3)" letter-spacing="2">CÉRAMIQUES</text>
+            <text
+              x="100"
+              y="215"
+              text-anchor="middle"
+              font-family="Georgia,serif"
+              font-size="8"
+              fill="rgba(60,30,10,0.3)"
+              letter-spacing="2"
+            >
+              CÉRAMIQUES
+            </text>
           </svg>
         </div>
       </div>

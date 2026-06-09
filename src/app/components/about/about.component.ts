@@ -11,8 +11,30 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
             <div class="about-arch-icon">
               <svg viewBox="0 0 34 34">
                 <circle cx="17" cy="17" r="15" stroke-width="1.2" />
-                <text x="17" y="14" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="white" stroke="none">Vert</text>
-                <text x="17" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="bold" fill="white" stroke="none">Grenier</text>
+                <text
+                  x="17"
+                  y="14"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="7"
+                  font-weight="bold"
+                  fill="white"
+                  stroke="none"
+                >
+                  Vert
+                </text>
+                <text
+                  x="17"
+                  y="22"
+                  text-anchor="middle"
+                  font-family="Georgia,serif"
+                  font-size="7"
+                  font-weight="bold"
+                  fill="white"
+                  stroke="none"
+                >
+                  Grenier
+                </text>
               </svg>
             </div>
             <div class="about-arch-label">Vert Grenier</div>
