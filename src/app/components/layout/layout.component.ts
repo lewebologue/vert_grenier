@@ -9,7 +9,7 @@ import {
   EstimationComponent,
   ContactComponent,
   FooterComponent,
-} from './index';
+} from '../index';
 
 @Component({
   selector: 'app-layout',
